@@ -9,12 +9,15 @@ from aiogram.client.default import DefaultBotProperties
 
 from handlers import start, generate, error
 from middlewares.access import AccessMiddleware
+from db.engine import init_db
 
 
 dotenv.load_dotenv()
 
 
 async def main() -> None:
+    await init_db()
+
     bot = Bot(
         token=os.getenv("TG_TOKEN"),
         default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN),
