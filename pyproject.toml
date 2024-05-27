@@ -7,6 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+aiogram = "^3.6.0"
+openai = "^1.30.3"
+asyncpg = "^0.29.0"
+sqlalchemy = "^2.0.30"
+python-dotenv = "^1.0.1"
+black = "^24.4.2"
 
 
 [build-system]
