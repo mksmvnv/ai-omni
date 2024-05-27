@@ -8,6 +8,7 @@ from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
 
 from handlers import start, generate, error
+from middlewares.access import AccessMiddleware
 
 
 dotenv.load_dotenv()
@@ -21,6 +22,7 @@ async def main() -> None:
 
     dp = Dispatcher()
     dp.include_routers(start.start_router, generate.generate_router, error.error_router)
+    dp.message.middleware(AccessMiddleware())
 
     await bot.delete_webhook(drop_pending_updates=True)
 
