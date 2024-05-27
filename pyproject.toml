@@ -1,3 +1,6 @@
+[tool.black]
+target-version = ["py312"]
+
 [tool.poetry]
 name = "ai-omni"
 version = "0.1.0"
