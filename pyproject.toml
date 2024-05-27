@@ -4,7 +4,7 @@ target-version = ["py312"]
 [tool.poetry]
 name = "ai-omni"
 version = "0.1.0"
-description = ""
+description = "This is a GPT-4 Omni version chat integrated into a Telegram bot via the ProxyAPI service"
 authors = ["Maksim <mksmvnv@icloud.com>"]
 readme = "README.md"
 
