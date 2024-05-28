@@ -1,6 +1,8 @@
-PROJECT_DIR=core
+WORKDIR=./core
 
-all: lint
+all: lint run
 
 lint:
-	poetry run python -m black $(PROJECT_DIR) --config pyproject.toml
+	black $(WORKDIR) --config pyproject.toml
+run:
+	python3 $(WORKDIR)/app.py
