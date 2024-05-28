@@ -12,7 +12,7 @@ generate_router = Router()
 
 @generate_router.message(F.text)
 async def generate(message: Message, state: FSMContext) -> None:
-    processing = await message.answer("Обрабатка запроса...")
+    processing = await message.answer("Обработка запроса...")
 
     await state.set_state(Generate.text)
 
