@@ -6,8 +6,9 @@ import dotenv
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
+from aiogram.fsm.storage.memory import MemoryStorage
 
-from handlers import start, generate, error
+from handlers import start, error, generate
 from middlewares.access import AccessMiddleware
 from db.engine import init_db
 
@@ -23,8 +24,10 @@ async def main() -> None:
         default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN),
     )
 
-    dp = Dispatcher()
-    dp.include_routers(start.start_router, generate.generate_router, error.error_router)
+    storage = MemoryStorage()
+
+    dp = Dispatcher(storage=storage)
+    dp.include_routers(start.start_router, error.error_router, generate.generate_router)
     dp.message.middleware(AccessMiddleware())
 
     await bot.delete_webhook(drop_pending_updates=True)
