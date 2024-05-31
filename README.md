@@ -28,7 +28,15 @@ poetry install
 poetry shell
 ```
 
-### Step 3: Run the Makefile
+### Step 3: Create a Server Session
+
+Before running the bot, create a session on the server. For example, using tmux:
+
+```
+tmux new-session -s ai-omni
+```
+
+### Step 4: Run the Makefile
 
 To build and run the project, execute:
 
@@ -36,21 +44,13 @@ To build and run the project, execute:
 make all
 ```
 
-### Step 4: Individual Commands
+### Step 5: Individual Commands
 
 Alternatively, you can run the following commands individually:
 
 ```
 make lint
 make run
-```
-
-### Step 5: Create a Server Session
-
-Before running the bot, create a session on the server. For example, using tmux:
-
-```
-tmux new-session -s ai-omni
 ```
 
 Your bot is now ready to use. Enjoy!
