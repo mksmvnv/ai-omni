@@ -1,26 +1,22 @@
-import os
 import asyncio
 import logging
-import dotenv
 
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from aiogram.client.default import DefaultBotProperties
 from aiogram.fsm.storage.memory import MemoryStorage
 
+from utils.config import settings
 from handlers import start, error, generate
 from middlewares.access import AccessMiddleware
 from db.engine import init_db
-
-
-dotenv.load_dotenv()
 
 
 async def main() -> None:
     await init_db()
 
     bot = Bot(
-        token=os.getenv("TG_TOKEN"),
+        token=settings.tg_token,
         default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN),
     )
 

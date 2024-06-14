@@ -1,17 +1,14 @@
-import os
 import logging
-import dotenv
 
 from typing import Callable, Awaitable, Dict, Any
 
 from aiogram import BaseMiddleware
 from aiogram.types import Message
 
+from utils.config import settings
 
-dotenv.load_dotenv()
 
-
-AUTHORIZED_USERS = [int(user) for user in os.getenv("USERS").split(",")]
+AUTHORIZED_USERS = [int(user) for user in settings.tg_ids.split(",")]
 
 
 class AccessMiddleware(BaseMiddleware):
