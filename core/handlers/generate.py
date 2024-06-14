@@ -4,7 +4,7 @@ from aiogram.fsm.context import FSMContext
 
 from utils.ai import ai_omni
 from states.user import Generate
-from db.config import total_tokens
+from db.counter import total_tokens
 
 
 generate_router = Router()
