@@ -17,6 +17,7 @@ sqlalchemy = "^2.0.30"
 python-dotenv = "^1.0.1"
 black = "^24.4.2"
 pydantic-settings = "^2.3.3"
+alembic = "^1.13.1"
 
 
 [build-system]
