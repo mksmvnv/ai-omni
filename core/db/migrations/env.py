@@ -7,7 +7,7 @@ from alembic import context
 
 from utils.config import settings
 
-from db.models import Calculate # noqa
+from db.models import Calculate  # noqa
 from db.engine import BaseModel
 
 # this is the Alembic Config object, which provides
@@ -72,7 +72,7 @@ def run_migrations_online() -> None:
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, 
+            connection=connection,
             target_metadata=target_metadata,
             compare_server_default=True,
         )
