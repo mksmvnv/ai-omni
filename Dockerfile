@@ -1,17 +1,12 @@
-FROM python:3.12-slim
+FROM python:3.12
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN pip install poetry
+RUN apt update && apt upgrade
 
 WORKDIR /app
-COPY . .
+COPY . /app
 
+RUN pip install poetry
 RUN poetry install
-
 RUN poetry run alembic upgrade head
 
 
