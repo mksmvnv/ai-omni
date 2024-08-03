@@ -4,7 +4,7 @@ from aiogram.fsm.context import FSMContext
 
 from utils.ai import ai_omni
 from states.user import Generate
-from db.counter import total_tokens
+from db.counter import add_tokens
 
 
 generate_router = Router()
@@ -27,7 +27,7 @@ async def generate(message: Message, state: FSMContext) -> None:
     user_tokens = len(message.text)
     ai_tokens = len(completion)
 
-    await total_tokens(
+    await add_tokens(
         message.from_user.id, message.from_user.username, user_tokens, ai_tokens
     )
 

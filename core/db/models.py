@@ -5,7 +5,7 @@ from db.engine import BaseModel
 
 
 class Calculate(BaseModel):
-    __tablename__ = "сalculate_tokens"
+    __tablename__ = "calculate_tokens"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     user_id: Mapped[int] = mapped_column(BigInteger)

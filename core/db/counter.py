@@ -2,7 +2,7 @@ from db.models import Calculate
 from db.engine import session_marker
 
 
-async def total_tokens(
+async def add_tokens(
     user_id: int, user_name: str, user_tokens: int, ai_tokens: int
 ) -> None:
     async with session_marker() as session:
