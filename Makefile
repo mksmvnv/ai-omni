@@ -1,11 +1,14 @@
-WORKDIR=./core
-
 .PHONY: all lint run
+
+WORKDIR=./core
 
 all: lint run
 
 lint:
-		black $(WORKDIR) --config pyproject.toml
+	@echo "Formatting..."
+	@black $(WORKDIR) --config pyproject.toml
+	@echo "Successfully!"
 
 run:
-		python3 $(WORKDIR)/app.py
+	@echo "Running..."
+	@python3 $(WORKDIR)/app.py
