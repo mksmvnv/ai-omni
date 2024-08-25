@@ -16,7 +16,7 @@ async def main() -> None:
     await init_db()
 
     bot = Bot(
-        token=settings.tg_token,
+        token=settings.TG_TOKEN,
         default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN),
     )
 
