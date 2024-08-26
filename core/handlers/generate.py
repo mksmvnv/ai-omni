@@ -37,5 +37,4 @@ async def generate(message: Message, state: FSMContext) -> None:
         await message.answer(completion)
     finally:
         await processing.delete()
-
-    await state.set_state(None)
+        await state.finish()
