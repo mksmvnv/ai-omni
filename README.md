@@ -1,4 +1,4 @@
-# AI Omni
+# AI Omni 🤖
 
 ![Static Badge](https://img.shields.io/badge/Python-3\.12-blue)
 ![Static Badge](https://img.shields.io/badge/Telegram_API-7\.4-re)
@@ -17,43 +17,26 @@ Create a **.env** file in the root directory of your project and add the followi
 - `AI_TOKEN` - Your ProxyAPI token
 - `AI_BASE_URL` - Base URL of ProxyAPI
 - `USERS` - User IDs for authentication
-- `POSTGRES_URL` - PostgreSQL URL
+- `DATABASE_URL` - PostgreSQL URL
+- `POSTGRES_USER` - PostgreSQL User
+- `POSTGRES_PASSWORD` - PostgreSQL Password
+- `POSTGRES_DB` - PostgreSQL DB Name
 
-### Step 2: Install Dependencies
+### Step 2: Create a Server Session
 
-Run the following commands to install the necessary dependencies and activate the virtual environment:
-
-```
-poetry install
-poetry shell
-```
-
-### Step 3: Create a Server Session
-
-Before running the bot, create a session on the server. For example, using tmux:
+Before running the bot, create a session on the server:\
 
 ```
-tmux new-session -s ai-omni
+tmux new -s ai-omni
 ```
 
-### Step 4: Run the Makefile
+### Step 3: Run the Bot with Docker
 
-To build and run the project, execute:
-
-```
-make all
-```
-
-### Step 5: Individual Commands
-
-Alternatively, you can run the following commands individually:
+To build and run the project using Docker, execute:\
 
 ```
-make lint
-make run
+docker compose up -d
 ```
 
-Your bot is now ready to use. Enjoy!
 
-
-
+### Your bot is now ready to use. Enjoy! 💫
