@@ -3,8 +3,6 @@ from aiogram.types import Message
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
 
-from states.user import Generate
-
 
 start_router = Router()
 
@@ -13,4 +11,3 @@ start_router = Router()
 async def command_start(message: Message, state: FSMContext) -> None:
     await message.answer("Авторизация прошла успешно! Какой у вас вопрос?")
     await state.update_data(prompt=[])
-    await state.set_state(Generate.text)
