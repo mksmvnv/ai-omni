@@ -17,10 +17,10 @@ aiogram = "^3.6.0"
 openai = "^1.30.3"
 asyncpg = "^0.29.0"
 sqlalchemy = "^2.0.30"
-python-dotenv = "^1.0.1"
-black = "^24.4.2"
 pydantic-settings = "^2.3.3"
-alembic = "^1.13.1"
+
+[tool.poetry.dev-dependencies]
+black = "^24.4.2"
 pytest = "^8.3.2"
 pytest-asyncio = "^0.24.0"
 
