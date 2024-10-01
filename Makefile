@@ -1,14 +1,19 @@
-.PHONY: all lint run
+.PHONY: all run lint
 
 WORKDIR=./core
+POETRYFLAGS=--config pyproject.toml
 
-all: lint run
-
-lint:
-	@echo "Formatting..."
-	@black $(WORKDIR) --config pyproject.toml
-	@echo "Successfully!"
+all: run lint
 
 run:
 	@echo "Running..."
-	@python3 $(WORKDIR)/app.py
+	@poetry run python3 $(WORKDIR)/main.py
+
+tests:
+	@echo "Running tests..."
+	@poetry run pytest $(WORKDIR)/tests
+
+lint:
+	@echo "Linting..."
+	@black $(WORKDIR) $(POETRYFLAGS)
+	@echo "Linting done!"
