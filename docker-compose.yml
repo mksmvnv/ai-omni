@@ -5,7 +5,7 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: ai_omni
+    container_name: ai-omni-bot
     env_file:
       - .env
     depends_on:
@@ -13,24 +13,24 @@ services:
     volumes:
       - .:/app
     networks:
-      - mynet
-    command: make all
+      - ai-omni
     restart: always
 
   db:
     image: postgres:16
-    container_name: postgres
+    container_name: ai-omni-db
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/data
     env_file:
-      - ./.env
+      - .env
     ports:
-      - 5433:5432
+      - "5433:5432"
     networks:
-      - mynet
+      - ai-omni
+    restart: always
 
 volumes:
   postgres_data:
 
 networks:
-  mynet:
+  ai-omni:

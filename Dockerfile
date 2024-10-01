@@ -1,15 +1,15 @@
-FROM python:3.12
+FROM python:3.12-slim
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir poetry
+COPY . .
 
-ENV POETRY_VIRTUALENVS_CREATE=false \
-    POETRY_NO_INTERACTION=1 \
-    PYTHONUNBUFFERED=1
+RUN apt-get update && apt-get install -y make
 
-COPY pyproject.toml poetry.lock /app/
+RUN pip install --upgrade pip
+RUN pip install poetry
 
-RUN poetry install --no-root --no-dev
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-dev
 
-COPY . /app
+CMD ["make", "run"]
