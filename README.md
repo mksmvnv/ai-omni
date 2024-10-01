@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/Python-3\.12-blue)
 ![Static Badge](https://img.shields.io/badge/Telegram_API-7\.4-re)
 
-This is a GPT-4 Omni version chat integrated into a Telegram bot via the ProxyAPI service, featuring user authentication and a database for calculating token usage.
+This is GPT-4 version of Omni, integrated into Telegram bot via ProxyAPI service.
 
 ![logo](./assets/logo.jpg)
 
