@@ -8,7 +8,7 @@ from aiogram.types import Message
 from utils.config import settings
 
 
-AUTHORIZED_USERS = [int(user) for user in settings.TG_IDS.split(",")]
+AUTHORIZED_USERS = [int(user) for user in settings.tg_ids.split(",")]
 
 
 class AccessMiddleware(BaseMiddleware):

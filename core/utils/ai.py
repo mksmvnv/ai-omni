@@ -3,7 +3,7 @@ from openai import AsyncOpenAI
 from utils.config import settings
 
 
-client = AsyncOpenAI(api_key=settings.AI_TOKEN, base_url=settings.AI_BASE_URL)
+client = AsyncOpenAI(api_key=settings.ai_token, base_url=settings.ai_base_url)
 
 
 async def ai_omni(prompt: str) -> str:
