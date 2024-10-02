@@ -14,9 +14,9 @@ This is GPT-4 version of Omni, integrated into Telegram bot via ProxyAPI service
 Create a **.env** file in the root directory of your project and add the following environment variables:
 
 - `tg_token` - Your Telegram bot token
+- `tg_ids` - User IDs for authentication
 - `ai_token` - Your ProxyAPI token
 - `ai_base_url` - Base URL of ProxyAPI
-- `users` - User IDs for authentication
 - `pg_url` - PostgreSQL URL
 - `pg_user` - PostgreSQL User
 - `pg_password` - PostgreSQL Password
